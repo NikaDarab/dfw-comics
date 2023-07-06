@@ -1,14 +1,15 @@
-interface Artist {
+interface Dates {
+  date: string;
+  time: string;
+  location: string;
+  ticketLink: string;
+}
+export interface Artist {
   id: number;
   name: string;
   bio: string;
   headShot: string;
-  dates: {
-    date: string;
-    time: string;
-    location: string;
-    ticketLink: string;
-  };
+  dates: Dates[];
   socialMedia: {
     instagram: string;
     facebook: string;
@@ -24,12 +25,20 @@ export const artists: Artist[] = [
     name: "John Smith",
     bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     headShot: "/../public/dude.jpg",
-    dates: {
-      date: "July 6, 2023",
-      time: "8:30PM",
-      location: "Addison Improv",
-      ticketLink: "https://example.com/john-smith-tickets",
-    },
+    dates: [
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+    ],
     socialMedia: {
       instagram: "https://instagram.com/johnsmith",
       facebook: "https://facebook.com/johnsmith",
@@ -42,13 +51,27 @@ export const artists: Artist[] = [
     id: 2,
     name: "Sarah Johnson",
     bio: "Sarah Johnson is a rising star in the comedy scene with her hilarious observations on everyday life.",
-    headShot: "http://placebeard.it/640/480",
-    dates: {
-      date: "July 6, 2023",
-      time: "8:30PM",
-      location: "Addison Improv",
-      ticketLink: "https://example.com/sarah-johnson-tickets",
-    },
+    headShot: "/../public/lady.jpeg",
+    dates: [
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/sarah-johnson-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+    ],
     socialMedia: {
       instagram: "https://instagram.com/sarahjohnson",
       facebook: "https://facebook.com/sarahjohnson",
@@ -61,13 +84,15 @@ export const artists: Artist[] = [
     id: 3,
     name: "Michael Davis",
     bio: "Michael Davis is a veteran comedian known for his quick wit and hilarious improvisational skills.",
-    headShot: "http://placebeard.it/640/480",
-    dates: {
-      date: "July 6, 2023",
-      time: "8:30PM",
-      location: "Addison Improv",
-      ticketLink: "https://example.com/michael-davis-tickets",
-    },
+    headShot: "/../public/dude2.jpeg",
+    dates: [
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/michael-davis-tickets",
+      },
+    ],
     socialMedia: {
       instagram: "https://instagram.com/michaeldavis",
       facebook: "https://facebook.com/michaeldavis",
@@ -80,13 +105,33 @@ export const artists: Artist[] = [
     id: 4,
     name: "Jessica Roberts",
     bio: "Jessica Roberts is a comedian known for her sharp observations on relationships and pop culture.",
-    headShot: "http://placebeard.it/640/480",
-    dates: {
-      date: "July 6, 2023",
-      time: "8:30PM",
-      location: "Addison Improv",
-      ticketLink: "https://example.com/jessica-roberts-tickets",
-    },
+    headShot: "/../public/lady2.jpeg",
+    dates: [
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/jessica-roberts-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+    ],
     socialMedia: {
       instagram: "https://instagram.com/jessicaroberts",
       facebook: "https://facebook.com/jessicaroberts",
@@ -97,15 +142,29 @@ export const artists: Artist[] = [
   },
   {
     id: 5,
-    name: "Jessica Roberts",
-    bio: "Jessica Roberts is a comedian known for her sharp observations on relationships and pop culture.",
-    headShot: "http://placebeard.it/640/480",
-    dates: {
-      date: "July 6, 2023",
-      time: "8:30PM",
-      location: "Addison Improv",
-      ticketLink: "https://example.com/jessica-roberts-tickets",
-    },
+    name: "Ali Wong",
+    bio: "Ali Wong is a comedian known for her sharp observations on relationships and pop culture.",
+    headShot: "/../public/lady3.jpeg",
+    dates: [
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/jessica-roberts-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+    ],
     socialMedia: {
       instagram: "https://instagram.com/jessicaroberts",
       facebook: "https://facebook.com/jessicaroberts",
@@ -116,15 +175,23 @@ export const artists: Artist[] = [
   },
   {
     id: 6,
-    name: "Jessica Roberts",
-    bio: "Jessica Roberts is a comedian known for her sharp observations on relationships and pop culture.",
-    headShot: "http://placebeard.it/640/480",
-    dates: {
-      date: "July 6, 2023",
-      time: "8:30PM",
-      location: "Addison Improv",
-      ticketLink: "https://example.com/jessica-roberts-tickets",
-    },
+    name: "Alice Porter",
+    bio: "Alice Porter is a comedian known for her sharp observations on relationships and pop culture.",
+    headShot: "/../public/lady4.jpeg",
+    dates: [
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/jessica-roberts-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+    ],
     socialMedia: {
       instagram: "https://instagram.com/jessicaroberts",
       facebook: "https://facebook.com/jessicaroberts",
@@ -135,15 +202,41 @@ export const artists: Artist[] = [
   },
   {
     id: 7,
-    name: "Jessica Roberts",
-    bio: "Jessica Roberts is a comedian known for her sharp observations on relationships and pop culture.",
-    headShot: "http://placebeard.it/640/480",
-    dates: {
-      date: "July 6, 2023",
-      time: "8:30PM",
-      location: "Addison Improv",
-      ticketLink: "https://example.com/jessica-roberts-tickets",
-    },
+    name: "Ahmed Ali",
+    bio: "Ahmed Ali is a comedian known for her sharp observations on relationships and pop culture.",
+    headShot: "/../public/dude4.jpeg",
+    dates: [
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/jessica-roberts-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+    ],
     socialMedia: {
       instagram: "https://instagram.com/jessicaroberts",
       facebook: "https://facebook.com/jessicaroberts",
@@ -154,53 +247,23 @@ export const artists: Artist[] = [
   },
   {
     id: 8,
-    name: "Jessica Roberts",
-    bio: "Jessica Roberts is a comedian known for her sharp observations on relationships and pop culture.",
-    headShot: "http://placebeard.it/640/480",
-    dates: {
-      date: "July 6, 2023",
-      time: "8:30PM",
-      location: "Addison Improv",
-      ticketLink: "https://example.com/jessica-roberts-tickets",
-    },
-    socialMedia: {
-      instagram: "https://instagram.com/jessicaroberts",
-      facebook: "https://facebook.com/jessicaroberts",
-      twitter: "https://twitter.com/jessicaroberts",
-      tiktok: "https://tiktok.com/@jessicaroberts",
-    },
-    email: "jessicaroberts@example.com",
-  },
-  {
-    id: 9,
-    name: "Jessica Roberts",
-    bio: "Jessica Roberts is a comedian known for her sharp observations on relationships and pop culture.",
-    headShot: "http://placebeard.it/640/480",
-    dates: {
-      date: "July 6, 2023",
-      time: "8:30PM",
-      location: "Addison Improv",
-      ticketLink: "https://example.com/jessica-roberts-tickets",
-    },
-    socialMedia: {
-      instagram: "https://instagram.com/jessicaroberts",
-      facebook: "https://facebook.com/jessicaroberts",
-      twitter: "https://twitter.com/jessicaroberts",
-      tiktok: "https://tiktok.com/@jessicaroberts",
-    },
-    email: "jessicaroberts@example.com",
-  },
-  {
-    id: 10,
-    name: "Jessica Roberts",
-    bio: "Jessica Roberts is a comedian known for her sharp observations on relationships and pop culture.",
-    headShot: "http://placebeard.it/640/480",
-    dates: {
-      date: "July 6, 2023",
-      time: "8:30PM",
-      location: "Addison Improv",
-      ticketLink: "https://example.com/jessica-roberts-tickets",
-    },
+    name: "Sam Asghari",
+    bio: "Sam Asghari is a comedian known for her sharp observations on relationships and pop culture.",
+    headShot: "/../public/dude3.jpeg",
+    dates: [
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/jessica-roberts-tickets",
+      },
+      {
+        date: "July 6, 2023",
+        time: "8:30PM",
+        location: "Addison Improv",
+        ticketLink: "https://example.com/john-smith-tickets",
+      },
+    ],
     socialMedia: {
       instagram: "https://instagram.com/jessicaroberts",
       facebook: "https://facebook.com/jessicaroberts",
