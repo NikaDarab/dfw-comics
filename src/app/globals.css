@@ -2,6 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global styles */
+* {
+  font-size: 12px;
+}
+
+/* Bio Container */
+.bio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.img-container {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio {
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+/* Ticket Container */
+.ticket-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.ticket-container>div {
+  font-size: 1.2rem;
+}
+
+/* Ticket Button */
+.ticket-button {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  background-color: #4CAF50;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.ticket-button:hover {
+  background-color: #45a049;
+}
+
+/* Additional styles */
+
+@media only screen and (max-width: 1020px) {
+  .bio-container {
+    grid-template-columns: 1fr;
+  }
+
+  .bio {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 640px) {
+  /* Additional styles for larger screens */
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,10 +90,5 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
