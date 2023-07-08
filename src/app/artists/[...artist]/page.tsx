@@ -307,7 +307,7 @@ const ArtistPage: React.FC<Props> = ({ params }) => {
   );
   return (
     <>
-      <div className="flex justify-center text-[4rem] my-9 font-bold">
+      <div className="flex justify-center text-[4rem] mb-9  mt-[9rem] font-bold ">
         <Typewriter text={artist?.name ?? ""} />
       </div>
       <div className="bio-container grid gap-4 mb-[10%]">
@@ -364,7 +364,7 @@ const ArtistPage: React.FC<Props> = ({ params }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 mt-[10%] show-container">
+      <div className="grid grid-cols-3 my-[12%] show-container">
         <div className="col-span-3 flex justify-between items-center p-4">
           <p className="text-4xl font-bold">Location</p>
           <div className="flex gap-[5px]">

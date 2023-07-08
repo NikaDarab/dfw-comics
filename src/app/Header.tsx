@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <section className=" flex flex-row items-center justify-between h-[10vh] p-[1em] bg-green-800">
+    <section className="flex flex-row items-center justify-between h-[10vh] p-[1em] bg-green-800 top-0 fixed w-full z-[999]">
       <div className="flex">
         <Image
           src="/../public/assets/images/logo.png"
