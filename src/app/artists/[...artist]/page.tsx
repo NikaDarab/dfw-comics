@@ -307,11 +307,11 @@ const ArtistPage: React.FC<Props> = ({ params }) => {
   );
   return (
     <>
-      <div className="flex justify-center text-4xl my-9">
+      <div className="flex justify-center text-[4rem] my-9 font-bold">
         <Typewriter text={artist?.name ?? ""} />
       </div>
       <div className="bio-container grid gap-4 mb-[10%]">
-        <div className="flex flex-col items-center justify-around relative w-full overflow-hidden h-[400px] img-container">
+        <div className="flex flex-col items-center justify-evenly relative w-full overflow-hidden h-[400px] img-container">
           <div className="flex flex-col justify-evenly socials-container md:h-[400px] lg:h-[400px]">
             <a
               target="_blank"
@@ -357,8 +357,8 @@ const ArtistPage: React.FC<Props> = ({ params }) => {
             className="max-w-full h-auto block object-cover object-bottom"
           />
         </div>
-        <div className="flex items-center bio">
-          <div className="text-3xl  flex justify-center leading-10">
+        <div className="flex items-center w-full justify-center">
+          <div className="text-3xl  flex justify-center leading-10 w-[80%]">
             {artist?.bio}
           </div>
         </div>
