@@ -1,7 +1,13 @@
 import React from "react";
 import { nanoid } from "nanoid";
 import Image from "next/image";
-import { FaFacebook, FaInstagram, FaTwitter, FaTiktok } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaTiktok,
+  FaYoutube,
+} from "react-icons/fa";
 import Typewriter from "@/Typewriter/Typewriter";
 
 interface Props {
@@ -27,6 +33,7 @@ interface Artist {
     facebook: string;
     twitter: string;
     tiktok: string;
+    youtube: string;
   };
   email: string;
 }
@@ -56,6 +63,7 @@ const artists: Artist[] = [
       facebook: "https://facebook.com/johnsmith",
       twitter: "https://twitter.com/johnsmith",
       tiktok: "https://tiktok.com/@johnsmith",
+      youtube: "https://youtube.com/@johnsmith",
     },
     email: "johnsmith@example.com",
   },
@@ -89,6 +97,7 @@ const artists: Artist[] = [
       facebook: "https://facebook.com/sarahjohnson",
       twitter: "https://twitter.com/sarahjohnson",
       tiktok: "https://tiktok.com/@sarahjohnson",
+      youtube: "https://youtube.com/@johnsmith",
     },
     email: "sarahjohnson@example.com",
   },
@@ -110,6 +119,7 @@ const artists: Artist[] = [
       facebook: "https://facebook.com/michaeldavis",
       twitter: "https://twitter.com/michaeldavis",
       tiktok: "https://tiktok.com/@michaeldavis",
+      youtube: "https://youtube.com/@johnsmith",
     },
     email: "michaeldavis@example.com",
   },
@@ -149,6 +159,7 @@ const artists: Artist[] = [
       facebook: "https://facebook.com/jessicaroberts",
       twitter: "https://twitter.com/jessicaroberts",
       tiktok: "https://tiktok.com/@jessicaroberts",
+      youtube: "https://youtube.com/@johnsmith",
     },
     email: "jessicaroberts@example.com",
   },
@@ -182,6 +193,7 @@ const artists: Artist[] = [
       facebook: "https://facebook.com/jessicaroberts",
       twitter: "https://twitter.com/jessicaroberts",
       tiktok: "https://tiktok.com/@jessicaroberts",
+      youtube: "https://youtube.com/@johnsmith",
     },
     email: "jessicaroberts@example.com",
   },
@@ -209,6 +221,7 @@ const artists: Artist[] = [
       facebook: "https://facebook.com/jessicaroberts",
       twitter: "https://twitter.com/jessicaroberts",
       tiktok: "https://tiktok.com/@jessicaroberts",
+      youtube: "https://youtube.com/@johnsmith",
     },
     email: "jessicaroberts@example.com",
   },
@@ -254,6 +267,7 @@ const artists: Artist[] = [
       facebook: "https://facebook.com/jessicaroberts",
       twitter: "https://twitter.com/jessicaroberts",
       tiktok: "https://tiktok.com/@jessicaroberts",
+      youtube: "https://youtube.com/@johnsmith",
     },
     email: "jessicaroberts@example.com",
   },
@@ -281,6 +295,7 @@ const artists: Artist[] = [
       facebook: "https://facebook.com/jessicaroberts",
       twitter: "https://twitter.com/jessicaroberts",
       tiktok: "https://tiktok.com/@jessicaroberts",
+      youtube: "https://youtube.com/@johnsmith",
     },
     email: "jessicaroberts@example.com",
   },
@@ -298,17 +313,40 @@ const ArtistPage: React.FC<Props> = ({ params }) => {
       <div className="bio-container mb-[10%]">
         <div className="flex flex-col items-center justify-around relative w-full overflow-hidden h-[400px] img-container">
           <div className="flex flex-col justify-evenly socials-container md:h-[400px] lg:h-[400px]">
-            <a target="_blank" href={artist?.socialMedia.facebook}>
+            <a
+              target="_blank"
+              href={artist?.socialMedia.facebook}
+              className="fb-button social-media-button"
+            >
               <FaFacebook className="text-5xl" />
             </a>
-            <a target="_blank" href={artist?.socialMedia.instagram}>
+            <a
+              target="_blank"
+              href={artist?.socialMedia.instagram}
+              className="ig-button social-media-button"
+            >
               <FaInstagram className="text-5xl" />
             </a>
-            <a target="_blank" href={artist?.socialMedia.twitter}>
+            <a
+              target="_blank"
+              href={artist?.socialMedia?.twitter}
+              className="twitter-button social-media-button"
+            >
               <FaTwitter className="text-5xl" />
             </a>
-            <a target="_blank" href={artist?.socialMedia.tiktok}>
+            <a
+              target="_blank"
+              href={artist?.socialMedia?.tiktok}
+              className="tik-tok-button social-media-button"
+            >
               <FaTiktok className="text-5xl" />
+            </a>
+            <a
+              target="_blank"
+              href={artist?.socialMedia?.youtube}
+              className="youtube-button social-media-button"
+            >
+              <FaYoutube className="text-5xl" />
             </a>
           </div>
           <Image
