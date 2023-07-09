@@ -16,25 +16,27 @@ interface Props {
   };
 }
 
-interface Dates {
+type Dates = {
   date: string;
   time: string;
   location: string;
   ticketLink: string;
-}
+};
+
+type SocialMedia = {
+  instagram?: string;
+  facebook?: string;
+  twitter?: string;
+  tiktok?: string;
+  youtube?: string;
+};
 interface Artist {
   id: number;
   name: string;
   bio: string;
   headShot: string;
-  dates: Dates[];
-  socialMedia: {
-    instagram: string;
-    facebook: string;
-    twitter: string;
-    tiktok: string;
-    youtube: string;
-  };
+  dates?: Dates[];
+  socialMedia?: SocialMedia;
   email: string;
 }
 
@@ -307,47 +309,58 @@ const ArtistPage: React.FC<Props> = ({ params }) => {
   );
   return (
     <>
-      <div className="flex justify-center text-[4rem] mb-9  mt-[9rem] font-bold ">
+      <div className="flex justify-center  mb-9  mt-[9rem] font-bold ">
         <Typewriter text={artist?.name ?? ""} />
       </div>
       <div className="bio-container grid gap-4 mb-[10%]">
         <div className="flex flex-col items-center justify-evenly relative w-full overflow-hidden h-[400px] img-container">
           <div className="flex flex-col justify-evenly socials-container md:h-[400px] lg:h-[400px]">
-            <a
-              target="_blank"
-              href={artist?.socialMedia.facebook}
-              className="fb-button social-media-button w-[4rem] h-[4rem] cursor-pointer grid"
-            >
-              <FaFacebook className="text-5xl" />
-            </a>
-            <a
-              target="_blank"
-              href={artist?.socialMedia.instagram}
-              className="ig-button social-media-button w-[4rem] h-[4rem] cursor-pointer grid"
-            >
-              <FaInstagram className="text-5xl" />
-            </a>
-            <a
-              target="_blank"
-              href={artist?.socialMedia?.twitter}
-              className="twitter-button social-media-button w-[4rem] h-[4rem] cursor-pointer grid"
-            >
-              <FaTwitter className="text-5xl" />
-            </a>
-            <a
-              target="_blank"
-              href={artist?.socialMedia?.tiktok}
-              className="tik-tok-button social-media-button w-[4rem] h-[4rem] cursor-pointer grid"
-            >
-              <FaTiktok className="text-5xl" />
-            </a>
-            <a
-              target="_blank"
-              href={artist?.socialMedia?.youtube}
-              className="youtube-button social-media-button w-[4rem] h-[4rem] cursor-pointer grid"
-            >
-              <FaYoutube className="text-5xl" />
-            </a>
+            {artist?.socialMedia?.facebook && (
+              <a
+                target="_blank"
+                href={artist?.socialMedia.facebook}
+                className="fb-button social-media-button w-[4rem] h-[4rem] cursor-pointer grid"
+              >
+                <FaFacebook className="text-5xl" />
+              </a>
+            )}
+
+            {artist?.socialMedia?.instagram && (
+              <a
+                target="_blank"
+                href={artist?.socialMedia?.instagram}
+                className="ig-button social-media-button w-[4rem] h-[4rem] cursor-pointer grid"
+              >
+                <FaInstagram className="text-5xl" />
+              </a>
+            )}
+            {artist?.socialMedia?.twitter && (
+              <a
+                target="_blank"
+                href={artist?.socialMedia?.twitter}
+                className="twitter-button social-media-button w-[4rem] h-[4rem] cursor-pointer grid"
+              >
+                <FaTwitter className="text-5xl" />
+              </a>
+            )}
+            {artist?.socialMedia?.tiktok && (
+              <a
+                target="_blank"
+                href={artist?.socialMedia?.tiktok}
+                className="tik-tok-button social-media-button w-[4rem] h-[4rem] cursor-pointer grid"
+              >
+                <FaTiktok className="text-5xl" />
+              </a>
+            )}
+            {artist?.socialMedia?.youtube && (
+              <a
+                target="_blank"
+                href={artist?.socialMedia?.youtube}
+                className="youtube-button social-media-button w-[4rem] h-[4rem] cursor-pointer grid"
+              >
+                <FaYoutube className="text-5xl" />
+              </a>
+            )}
           </div>
           <Image
             src={artist?.headShot ?? "/../public/assets/images/dude.jpg"}
@@ -372,7 +385,7 @@ const ArtistPage: React.FC<Props> = ({ params }) => {
           </div>
           <p className="text-4xl font-bold text-center">Tickets</p>
         </div>
-        {artist?.dates.map((d) => (
+        {artist?.dates?.map((d) => (
           <div key={nanoid()} className="col-span-3">
             <div className="flex justify-between items-center p-4">
               <p className="text-3xl">{d.location}</p>

@@ -25,7 +25,7 @@ const Typewriter: React.FC<TypewriterProps> = ({ text, delay = 100 }) => {
     };
   }, [displayText, text, delay]);
 
-  return <h1>{displayText}</h1>;
+  return <p className="text-[4rem] whitespace-normal  ">{displayText}</p>;
 };
 
 export default Typewriter;
