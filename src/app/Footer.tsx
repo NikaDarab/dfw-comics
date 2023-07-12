@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-green-800 py-[5px] bottom-0 w-full fixed">
+    <footer className="bg-green-800 py-[5px] bottom-0 w-full">
       <div className="text-center">
         <p style={{ fontSize: "14px" }}>
           &copy; {new Date().getFullYear()} DFW-Comics
