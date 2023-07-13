@@ -4,44 +4,10 @@ import { useAuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-interface AuthData {
-  user: {
-    uid: string;
-    email: string;
-    emailVerified: boolean;
-    isAnonymous: boolean;
-    providerData: {
-      providerId: string;
-      uid: string;
-      displayName: null | string;
-      email: string;
-      phoneNumber: null | string;
-      photoURL: null | string;
-    }[];
-    stsTokenManager: {
-      refreshToken: string;
-      accessToken: string;
-      expirationTime: number;
-    };
-    createdAt: string;
-    lastLoginAt: string;
-    apiKey: string;
-    appName: string;
-  };
-  providerId: null;
-  _tokenResponse: {
-    kind: string;
-    idToken: string;
-    email: string;
-    refreshToken: string;
-    expiresIn: string;
-    localId: string;
-  };
-  operationType: string;
-}
+ 
 
 function Page() {
-  const { user } = useAuthContext<AuthData>();
+  const { user } = useAuthContext ();
   const router = useRouter();
 
   useEffect(() => {
