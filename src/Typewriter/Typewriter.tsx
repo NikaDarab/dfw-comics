@@ -25,11 +25,7 @@ const Typewriter: React.FC<TypewriterProps> = ({ text, delay = 100 }) => {
     };
   }, [displayText, text, delay]);
 
-  return (
-    <p className="text-[48px]" style={{ fontSize: "4rem" }}>
-      {displayText}
-    </p>
-  );
+  return <p className="text-[4rem]">{displayText}</p>;
 };
 
 export default Typewriter;

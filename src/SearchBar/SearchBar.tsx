@@ -27,35 +27,26 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           autoFocus
           required
           onClick={handleSearch}
+          id={results.length ? "search-results" : "no-search-results"}
         />
-        <div>
-          {results.length > 0 && (
-            <ul
-              id="search-results"
-              className="w-full left-0 right-0  bg-white rounded-lg shadow-md z-[999]"
-              style={{
-                position: "absolute",
-                backgroundColor: "white",
-                height: "200px",
-                overflowY: "scroll",
-                padding: "10px",
-              }}
-            >
-              {results?.map((result) => (
-                <div key={result.id} className="flex">
-                  <Image
-                    src={result?.headShot}
-                    alt={result.name}
-                    width={40}
-                    height={40}
-                  />
-                  <li>{result?.name}</li>
-                </div>
-              ))}
-            </ul>
-          )}
-        </div>
       </form>
+      <div className="flex flex-col">
+        {results.length > 0 && (
+          <ul className="search-results w-full left-0 right-0  bg-white rounded-lg shadow-md z-[999]">
+            {results?.map((result) => (
+              <div key={result.id} className="flex search-result">
+                <Image
+                  src={result?.headShot}
+                  alt={result.name}
+                  width={40}
+                  height={40}
+                />
+                <li>{result?.name}</li>
+              </div>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
