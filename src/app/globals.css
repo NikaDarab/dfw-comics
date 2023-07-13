@@ -283,14 +283,43 @@ body {
 }
 
 input[type="search"],
-#search-results {
+.search-results {
   outline: 0;
   width: 100%;
   background: var(--color-light);
   padding: 0 1.6rem;
-  border-radius: var(--rad);
   appearance: none;
   transition: all var(--dur) var(--bez);
   z-index: 1;
   position: relative;
+}
+
+#search-results {
+  border-top-left-radius: var(--rad);
+  border-top-right-radius: var(--rad);
+}
+
+#no-search-results {
+  border-radius: var(--rad);
+}
+
+.search-results {
+  border-bottom-left-radius: var(--rad);
+  border-bottom-right-radius: var(--rad);
+  position: absolute;
+  padding: 10px;
+}
+
+.search-result {
+  padding: 5px;
+}
+
+.form-container {
+  width: 40vw
+}
+
+@media (max-width: 767px) {
+  .form-container {
+    width: 80vw
+  }
 }
